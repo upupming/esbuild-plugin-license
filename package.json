@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-license",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "esbuild plugin for generating license for your bundle",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

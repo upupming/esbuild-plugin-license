@@ -7,16 +7,17 @@ License generation tool similar to https://github.com/mjeanroy/rollup-plugin-lic
 
 ## Usage
 
+```bash
+npm i -D esbuild-plugin-license
+```
+
 ```ts
 import * as esbuild from 'esbuild'
-import esbuildPluginLicense from '../src/index'
-
-const args = process.argv.slice(2)
+import esbuildPluginLicense from 'esbuild-plugin-license';
 
 esbuild.build({
   entryPoints: ['index.ts'],
   outdir: 'dist',
-  watch: args[0] === '--watch',
   plugins: [esbuildPluginLicense()],
   bundle: true,
   platform: 'node'
