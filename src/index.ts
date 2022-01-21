@@ -2,7 +2,8 @@ import { Plugin } from 'esbuild';
 import * as _ from 'lodash-es'
 import path from 'path';
 import { NormalizedReadResult, readPackageUp, NormalizedPackageJson } from 'read-pkg-up'
-import fs from 'fs/promises'
+import fs from 'fs'
+
 
 type NotNill<T> = T extends null | undefined ? never : T;
 
@@ -60,14 +61,14 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
   const dependencies: Dependency[] = []
   const getLicenseText = async (pkgJsonPath: string) => {
     const dir = path.dirname(pkgJsonPath)
-    const files = await fs.readdir(dir)
+    const files = fs.readdirSync(dir)
     const idx = files.findIndex(file => {
       if (file.toLocaleLowerCase().includes('license'))
         return true
       else return false
     })
     if (idx !== -1) {
-      return (await fs.readFile(path.join(dir, files[idx]))).toString()
+      return (fs.readFileSync(path.join(dir, files[idx]))).toString()
     }
     return ''
   }
@@ -121,7 +122,7 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
             licenseText: await getLicenseText(pkg!.path)
           })
         }
-        await fs.writeFile(outputFile, thirdPartyLicenseResult, {
+        fs.writeFileSync(outputFile, thirdPartyLicenseResult, {
           encoding: 'utf-8'
         })
       })
