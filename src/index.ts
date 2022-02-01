@@ -90,7 +90,15 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
           cwd: path.dirname(args.path)
         })
         if (result) {
-          loadedPackages.set(result.packageJson.name, result)
+          // Only keep the latest version of the dependency
+          if (loadedPackages.has(result.packageJson.name)) {
+            const oldVersion = loadedPackages.get(result.packageJson.name)?.packageJson.version
+            if (!oldVersion || (oldVersion < result.packageJson.version)) {
+              loadedPackages.set(result.packageJson.name, result)
+            }
+          } else {
+            loadedPackages.set(result.packageJson.name, result)
+          }
         }
         return null
       })

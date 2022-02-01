@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-and-test:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2

@@ -3,6 +3,8 @@ import esbuildPluginLicense from '../..'
 import path from 'path'
 import fs from 'fs'
 
+process.chdir(__dirname)
+
 describe('esbuildPluginLicense', () => {
   it('should generate dependencies and inject banner', async () => {
     const outdir = path.join(__dirname, 'dist')
