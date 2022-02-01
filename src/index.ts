@@ -78,9 +78,11 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
       const pkg = await readPackageUp()
       const banner = options.banner || defaultOptions.banner
 
+      let userBanner = build.initialOptions.banner?.js
+      userBanner = userBanner ? (userBanner + '\n') : ''
       build.initialOptions.banner = {
         ...build.initialOptions.banner,
-        js: (build.initialOptions.banner?.js ?? '') + _.template(banner)({ pkg: pkg?.packageJson })
+        js: userBanner + _.template(banner)({ pkg: pkg?.packageJson })
       }
 
       build.onLoad({ filter: /.*/ }, async (args) => {
@@ -98,6 +100,7 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
         for await (const [name, result] of ([...loadedPackages.entries()].sort((a, b) => a[0] < b[0] ? -1 : 1))) {
           if (!includePrivate && result.packageJson.private) continue
           if (!name) continue
+          if (result.packageJson.name === pkg?.packageJson.name) continue
 
           dependencies.push({
             packageJson: result.packageJson,
