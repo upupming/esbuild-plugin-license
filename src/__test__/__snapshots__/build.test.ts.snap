@@ -36,7 +36,7 @@ electron-to-chromium:1.4.59 -- ISC
 escape-string-regexp:1.0.5 -- MIT
 gensync:1.0.0-beta.2 -- MIT
 globals:11.12.0 -- MIT
-has-flag:3.0.0 -- MIT
+has-flag:4.0.0 -- MIT
 js-tokens:4.0.0 -- MIT
 jsesc:2.5.2 -- MIT
 json5:2.2.0 -- MIT
@@ -45,12 +45,12 @@ node-releases:2.0.1 -- MIT
 safe-buffer:5.1.2 -- MIT
 semver:6.3.0 -- ISC
 source-map:0.5.7 -- BSD-3-Clause
-supports-color:5.5.0 -- MIT
+supports-color:7.2.0 -- MIT
 to-fast-properties:2.0.0 -- MIT",
-    "path": "/Users/liyiming/projects/esbuild-plugin-license/src/__test__/dist/dependencies.txt",
+    "path": "dependencies.txt",
   },
   Object {
-    "content": "/*! esbuild-plugin-license v1.0.4 | MIT */
+    "content": "/*! esbuild-plugin-license v1.1.0 | MIT */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -58868,7 +58868,7 @@ module.exports = __toCommonJS(test_exports);
   a
 });
 ",
-    "path": "/Users/liyiming/projects/esbuild-plugin-license/src/__test__/dist/index.js",
+    "path": "index.js",
   },
 ]
 `;
