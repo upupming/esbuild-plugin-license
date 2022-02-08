@@ -13,6 +13,7 @@ export default <Options>{
   ],
   // some packages has no esm format, for example, `error-ex/index.js`
   // so we have to convert `require('util')` to `import * as util from 'util'`
+  // see discuss here: https://github.com/evanw/esbuild/issues/1921#issuecomment-1010490128
   esbuildPlugins: [commonjsPlugin()],
   sourcemap: true,
   external: ['esbuild']
