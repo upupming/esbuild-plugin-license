@@ -7,6 +7,7 @@ importers:
       '@babel/core': 7.16.7
       '@babel/preset-env': 7.16.11
       '@babel/preset-typescript': 7.16.7
+      '@chialab/esbuild-plugin-commonjs': 0.14.17
       '@types/jest': 27.4.0
       '@types/lodash-es': 4.17.5
       '@types/node': 17.0.9
@@ -21,6 +22,7 @@ importers:
       '@babel/core': 7.16.7
       '@babel/preset-env': 7.16.11_@babel+core@7.16.7
       '@babel/preset-typescript': 7.16.7_@babel+core@7.16.7
+      '@chialab/esbuild-plugin-commonjs': 0.14.17
       '@types/jest': 27.4.0
       '@types/lodash-es': 4.17.5
       '@types/node': 17.0.9
@@ -1211,6 +1213,42 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
+  /@chialab/cjs-to-esm/0.14.17:
+    resolution: {integrity: sha512-Ik7Wzn38RnBOu2hdW96kJG3hsf95sTPoQeYtqyUkQhBgHIhq6icb69p4Oo2vhTu0kSr2iJbK7gyEnliO2Wkw6g==}
+    engines: {node: '>=13'}
+    dependencies:
+      '@chialab/estransform': 0.14.17
+    dev: true
+
+  /@chialab/esbuild-plugin-commonjs/0.14.17:
+    resolution: {integrity: sha512-5vbSiAYR/PIebvn0urxIKESTinwqasGkI3hQUAeXskCyikCq1x0IxrzkE19Oo0m9qPq07d00zdkAbN7Z0okQaw==}
+    engines: {node: '>=13'}
+    dependencies:
+      '@chialab/cjs-to-esm': 0.14.17
+      '@chialab/esbuild-rna': 0.14.17
+      '@chialab/node-resolve': 0.14.17
+    dev: true
+
+  /@chialab/esbuild-rna/0.14.17:
+    resolution: {integrity: sha512-q3ApJndxhu+YkLBs2EukpIttkCl3GC6GO9q6pDPuhp33nrCn5ZWYZWgM9S/WiKdN9CW4s9sbiOdhMQB8pzoT0w==}
+    engines: {node: '>=13'}
+    dependencies:
+      '@chialab/estransform': 0.14.17
+      '@chialab/node-resolve': 0.14.17
+    dev: true
+
+  /@chialab/estransform/0.14.17:
+    resolution: {integrity: sha512-2cLMdGBLqDGNxZFnBltUo4fRBOgAfWmWpVID0i1DXFWZdNjj4kiIjAjvphj6a5D8cywfjQ7/FbufBy787dnnAQ==}
+    engines: {node: '>=13'}
+    dependencies:
+      '@parcel/source-map': 2.0.2
+    dev: true
+
+  /@chialab/node-resolve/0.14.17:
+    resolution: {integrity: sha512-uR4zr3CF69jWYGOtZj6z4eSylETCebfMOzgCIT8zwOy5o1tCn6fbkoAcEIYVuKouL1SH3niZM/EfWWssSQ+sWQ==}
+    engines: {node: '>=13'}
+    dev: true
+
   /@istanbuljs/load-nyc-config/1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
     engines: {node: '>=8'}
@@ -1437,6 +1475,13 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@parcel/source-map/2.0.2:
+    resolution: {integrity: sha512-NnUrPYLpYB6qyx2v6bcRPn/gVigmGG6M6xL8wIg/i0dP1GLkuY1nf+Hqdf63FzPTqqT7K3k6eE5yHPQVMO5jcA==}
+    engines: {node: ^12.18.3 || >=14}
+    dependencies:
+      detect-libc: 1.0.3
     dev: true
 
   /@sinonjs/commons/1.8.3:
@@ -2030,6 +2075,12 @@ packages:
   /delayed-stream/1.0.0:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
     engines: {node: '>=0.4.0'}
+    dev: true
+
+  /detect-libc/1.0.3:
+    resolution: {integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=}
+    engines: {node: '>=0.10'}
+    hasBin: true
     dev: true
 
   /detect-newline/3.1.0:
