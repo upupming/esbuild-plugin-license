@@ -15,8 +15,10 @@ importers:
       jest: 27.4.7
       lodash: 4.17.21
       lodash-es: 4.17.21
+      normalize-package-data: 3.0.3
       read-pkg-up: 9.0.0
       tsup: 5.11.11
+      type-fest: 2.11.2
       typescript: 4.5.4
     devDependencies:
       '@babel/core': 7.16.7
@@ -30,8 +32,10 @@ importers:
       jest: 27.4.7
       lodash: 4.17.21
       lodash-es: 4.17.21
+      normalize-package-data: 3.0.3
       read-pkg-up: 9.0.0
       tsup: 5.11.11_typescript@4.5.4
+      type-fest: 2.11.2
       typescript: 4.5.4
 
   test:
@@ -2472,7 +2476,7 @@ packages:
     optional: true
 
   /function-bind/1.1.1:
-    resolution: {integrity: sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=}
+    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
   /gensync/1.0.0-beta.2:
@@ -2555,7 +2559,7 @@ packages:
     dev: true
 
   /has/1.0.3:
-    resolution: {integrity: sha1-ci18v8H2qoJB8W3YFOAR4fQeh5Y=}
+    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
@@ -3662,7 +3666,7 @@ packages:
     dependencies:
       find-up: 6.2.0
       read-pkg: 7.0.0
-      type-fest: 2.9.0
+      type-fest: 2.11.2
     dev: true
 
   /read-pkg/7.0.0:
@@ -3672,7 +3676,7 @@ packages:
       '@types/normalize-package-data': 2.4.1
       normalize-package-data: 3.0.3
       parse-json: 5.2.0
-      type-fest: 2.9.0
+      type-fest: 2.11.2
     dev: true
 
   /readdirp/3.6.0:
@@ -3872,7 +3876,7 @@ packages:
     dev: true
 
   /spdx-expression-parse/3.0.1:
-    resolution: {integrity: sha1-z3D1BILu/cmOPOCmgz5KU87rpnk=}
+    resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
     dependencies:
       spdx-exceptions: 2.3.0
       spdx-license-ids: 3.0.11
@@ -4097,8 +4101,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/2.9.0:
-    resolution: {integrity: sha512-uC0hJKi7eAGXUJ/YKk53RhnKxMwzHWgzf4t92oz8Qez28EBgVTfpDTB59y9hMYLzc/Wl85cD7Tv1hLZZoEJtrg==}
+  /type-fest/2.11.2:
+    resolution: {integrity: sha512-reW2Y2Mpn0QNA/5fvtm5doROLwDPu2zOm5RtY7xQQS05Q7xgC8MOZ3yPNaP9m/s/sNjjFQtHo7VCNqYW2iI+Ig==}
     engines: {node: '>=12.20'}
     dev: true
 
@@ -4152,7 +4156,7 @@ packages:
     dev: true
 
   /validate-npm-package-license/3.0.4:
-    resolution: {integrity: sha1-/JH2uce6FchX9MssXe/uw51PQQo=}
+    resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
     dependencies:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1

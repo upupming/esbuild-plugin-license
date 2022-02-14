@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-license",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "esbuild plugin for generating license for your bundle",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -39,8 +39,10 @@
     "jest": "27.4.7",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
+    "normalize-package-data": "3.0.3",
     "read-pkg-up": "9.0.0",
     "tsup": "5.11.11",
+    "type-fest": "2.11.2",
     "typescript": "4.5.4"
   },
   "peerDependencies": {

@@ -1,9 +1,12 @@
 import { Plugin } from 'esbuild';
 import * as _ from 'lodash-es'
 import path from 'path';
-import { NormalizedReadResult, readPackageUp, NormalizedPackageJson } from 'read-pkg-up'
+import { NormalizedReadResult, readPackageUp } from 'read-pkg-up'
+import normalize from 'normalize-package-data'
+import type { PackageJson } from 'type-fest'
 import fs from 'fs'
-
+type Package = normalize.Package
+type NormalizedPackageJson = Package & PackageJson
 
 type NotNill<T> = T extends null | undefined ? never : T;
 
