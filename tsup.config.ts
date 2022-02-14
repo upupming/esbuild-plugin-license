@@ -7,7 +7,9 @@ export default <Options>{
     'esm'
   ],
   clean: true,
-  dts: true,
+  dts: {
+    resolve: true
+  },
   entryPoints: [
     'src/index.ts'
   ],
