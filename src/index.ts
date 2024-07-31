@@ -136,9 +136,11 @@ export default function esbuildPluginLicense(options: Options = {}): Plugin {
             licenseText: await getLicenseText(pkg!.path)
           })
         }
-        fs.writeFileSync(outputFile, thirdPartyLicenseResult, {
-          encoding: 'utf-8'
-        })
+        if (thirdPartyLicenseResult) {
+          fs.writeFileSync(outputFile, thirdPartyLicenseResult, {
+            encoding: 'utf-8'
+          })
+        }
       })
     }
   }
