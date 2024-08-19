@@ -44,3 +44,22 @@ export const defaultOptions: DeepRequired<Options> = {
   }
 } as const
 ```
+
+## How to run this project
+
+1. Install newest `pnpm` with major version 7:
+```bash
+  npm install -g pnpm@7
+```
+
+2. Install dependencies without lock file changes:
+```bash
+  pnpm install --frozen-lockfile
+```
+
+3. Check if all commands work and tests pass:
+```bash
+  pnpm run build
+  pnpm run dev
+  pnpm run test
+```
