@@ -35,10 +35,10 @@ export const defaultOptions: DeepRequired<Options> = {
   thirdParty: {
     includePrivate: false,
     output: {
-      file: 'dependencies.txt',
+      file: 'oss-licenses.json',
       // Template function that can be defined to customize report output
       template(dependencies) {
-        return dependencies.map((dependency) => `${dependency.packageJson.name}:${dependency.packageJson.version} -- ${dependency.packageJson.license}`).join('\n');
+        // Default template function
       },
     }
   }

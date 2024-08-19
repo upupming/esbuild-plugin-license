@@ -18,7 +18,7 @@ describe('esbuildPluginLicense', () => {
       outdir
     })
 
-    const outfiles = await (await fs.promises.readdir(outdir)).map(file => ({
+    const outfiles = (await fs.promises.readdir(outdir)).map(file => ({
       path: file,
       content: fs.readFileSync(path.join(outdir, file)).toString()
     }))

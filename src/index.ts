@@ -27,6 +27,8 @@ export interface Dependency {
   licenseText: string
 }
 
+export type TemplateFunction = (dependencies: Dependency[], self: Dependency) => string
+
 export interface Options {
   banner?: string
   thirdParty?: {
@@ -40,9 +42,42 @@ export interface Options {
        * Template function that can be defined to customize report output
        * Format of https://lodash.com/docs/4.17.15#template
        */
-      template?: string | ((dependencies: Dependency[], self: Dependency) => string)
+      template?: string | TemplateFunction
     }
   }
+}
+
+const getAuthorDescription = (author: NormalizedPackageJson['author']): string | null => {
+  if (author === undefined) return null
+  if (typeof author === 'string') return author
+  let authorDescription = author.name
+  if (author.email) authorDescription += ` <${author.email}>`
+  if (author.url) authorDescription += ` (${author.url})`
+
+  return authorDescription
+}
+
+export const defaultTemplateFunction: TemplateFunction = (dependencies) => {
+    const licensesJSON = dependencies
+      .map((dependency) => {
+        const name = dependency.packageJson.name ?? '';
+        const version = dependency.packageJson.version;
+        const licenseText = dependency.licenseText
+        const author = getAuthorDescription(dependency.packageJson.author)
+        const license = dependency.packageJson.license ?? null;
+        const repository = dependency.packageJson.repository?.url ?? null;
+
+        return {
+          name,
+          version,
+          licenseText,
+          ...(author === null ? {} : { author }),
+          ...(license === null ? {} : { license }),
+          ...(repository === null ? {} : { repository }),
+        };
+      })
+
+  return JSON.stringify(licensesJSON, null, 2);
 }
 
 export const defaultOptions: DeepRequired<Options> = {
@@ -50,11 +85,8 @@ export const defaultOptions: DeepRequired<Options> = {
   thirdParty: {
     includePrivate: false,
     output: {
-      file: 'dependencies.txt',
-      // Template function that can be defined to customize report output
-      template(dependencies) {
-        return dependencies.map((dependency) => `${dependency.packageJson.name}:${dependency.packageJson.version} -- ${dependency.packageJson.license}`).join('\n');
-      },
+      file: 'oss-licenses.json',
+      template: defaultTemplateFunction,
     }
   }
 } as const
